@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> INDEX 🚀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Covered+By+Your+Grace&family=Fredoka:wght@400;600;700&family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --comic-yellow: #FFD700;
+            --comic-red: #FF3366;
+            --comic-blue: #3366FF;
+            --comic-green: #33FF66;
+            --comic-purple: #9933FF;
+            --comic-orange: #FF9933;
+            --comic-pink: #FF66CC;
+            --bg-cream: #FFFEF2;
+            --shadow-dark: #2D2D2D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-cream);
+            font-family: 'Fredoka', sans-serif;
+            color: var(--shadow-dark);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Comic dots background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle, #FFE5CC 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Floating shapes */
+        .shape {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            background: var(--comic-blue);
+            top: 10%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            background: var(--comic-red);
+            top: 60%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            background: var(--comic-green);
+            bottom: 15%;
+            left: 20%;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header with comic style */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 30px;
+            background: white;
+            border: 8px solid var(--shadow-dark);
+            border-radius: 30px;
+            box-shadow: 
+                12px 12px 0 var(--comic-yellow),
+                12px 12px 0 8px var(--shadow-dark);
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        header::before,
+        header::after {
+            content: "★";
+            position: absolute;
+            font-size: 4rem;
+            color: var(--comic-red);
+            animation: spin 3s linear infinite;
+        }
+
+        header::before {
+            top: -30px;
+            left: -30px;
+        }
+
+        header::after {
+            bottom: -30px;
+            right: -30px;
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--comic-blue);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 
+                5px 5px 0 var(--comic-yellow),
+                10px 10px 0 var(--comic-red),
+                4px 4px 0 var(--shadow-dark);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-family: 'Righteous', cursive;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--comic-purple);
+            background: var(--comic-yellow);
+            display: inline-block;
+            padding: 10px 30px;
+            border: 4px solid var(--shadow-dark);
+            border-radius: 50px;
+            box-shadow: 4px 4px 0 var(--shadow-dark);
+            transform: rotate(2deg);
+        }
+
+        /* Warning banner - comic style */
+        .warning {
+            background: var(--comic-red);
+            color: white;
+            border: 6px solid var(--shadow-dark);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            font-family: 'Righteous', cursive;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            text-align: center;
+            box-shadow: 8px 8px 0 var(--shadow-dark);
+            position: relative;
+            transform: rotate(1deg);
+        }
+
+        .warning::before {
+            content: "⚠️";
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Section headers - comic explosion style */
+        .section-header {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: white;
+            background: var(--comic-orange);
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 25px;
+            border: 6px solid var(--shadow-dark);
+            border-radius: 20px;
+            box-shadow: 8px 8px 0 var(--shadow-dark);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        .section-header::before,
+        .section-header::after {
+            content: "💥";
+            position: absolute;
+            font-size: 2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .section-header::before {
+            left: -40px;
+        }
+
+        .section-header::after {
+            right: -40px;
+        }
+
+        /* Term blocks - speech bubble style */
+        .term {
+            background: white;
+            border: 6px solid var(--shadow-dark);
+            border-radius: 25px;
+            margin: 30px 0;
+            padding: 30px;
+            box-shadow: 6px 6px 0 var(--shadow-dark);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .term::before {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid var(--shadow-dark);
+        }
+
+        .term::after {
+            content: "";
+            position: absolute;
+            bottom: -14px;
+            left: 53px;
+            width: 0;
+            height: 0;
+            border-left: 17px solid transparent;
+            border-right: 17px solid transparent;
+            border-top: 17px solid white;
+        }
+
+        .term:hover {
+            transform: translateY(-5px) rotate(1deg);
+            box-shadow: 10px 10px 0 var(--shadow-dark);
+        }
+
+        .term:nth-child(odd) {
+            border-color: var(--comic-blue);
+        }
+
+        .term:nth-child(even) {
+            border-color: var(--comic-purple);
+        }
+
+        .term:nth-child(3n) {
+            border-color: var(--comic-green);
+        }
+
+        .term-title {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--comic-red);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 var(--comic-yellow);
+        }
+
+        .term-content {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            line-height: 1.8;
+            color: var(--shadow-dark);
+            font-weight: 400;
+        }
+
+        /* Links - comic button style */
+        a {
+            color: var(--comic-blue);
+            text-decoration: none;
+            font-weight: 600;
+            background: var(--comic-yellow);
+            padding: 3px 10px;
+            border: 3px solid var(--shadow-dark);
+            border-radius: 10px;
+            display: inline-block;
+            margin: 3px 5px;
+            transition: all 0.2s ease;
+            box-shadow: 3px 3px 0 var(--shadow-dark);
+        }
+
+        a:hover {
+            background: var(--comic-pink);
+            color: white;
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--shadow-dark);
+        }
+
+        a::before {
+            content: "🔗 ";
+        }
+
+        /* Resources section */
+        .resources {
+            background: var(--comic-green);
+            border: 8px solid var(--shadow-dark);
+            border-radius: 30px;
+            padding: 40px;
+            margin-top: 60px;
+            box-shadow: 10px 10px 0 var(--shadow-dark);
+        }
+
+        .resources h2 {
+            font-family: 'Bangers', cursive;
+            color: white;
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 4px 4px 0 var(--shadow-dark);
+        }
+
+        .resources ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .resources li {
+            background: white;
+            padding: 15px;
+            border: 4px solid var(--shadow-dark);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 4px 4px 0 var(--shadow-dark);
+        }
+
+        .resources li:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 2rem;
+            color: var(--comic-purple);
+        }
+
+        .footer::before,
+        .footer::after {
+            content: "★ ★ ★";
+            display: block;
+            margin: 15px 0;
+            color: var(--comic-orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+                box-shadow: 8px 8px 0 var(--comic-yellow),
+                           8px 8px 0 6px var(--shadow-dark);
+            }
+
+            header::before,
+            header::after {
+                font-size: 2rem;
+            }
+
+            .section-header::before,
+            .section-header::after {
+                display: none;
+            }
+
+            .term {
+                padding: 20px;
+            }
+
+            .resources {
+                padding: 25px;
+            }
+        }
+
+        /* Fun animations */
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+        }
+
+        .term:hover .term-title {
+            animation: wiggle 0.5s ease-in-out;
+        }
+
+        /* Loading animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .term {
+            animation: slideIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .term:nth-child(1) { animation-delay: 0.1s; }
+        .term:nth-child(2) { animation-delay: 0.2s; }
+        .term:nth-child(3) { animation-delay: 0.3s; }
+        .term:nth-child(4) { animation-delay: 0.4s; }
+        .term:nth-child(5) { animation-delay: 0.5s; }
+        .term:nth-child(n+6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <div class="container">
+        <header>
+            <h1>CYBERSPACE<br>GLOSSARY</h1>
+            <p class="subtitle">version 2.0.26 🚀 archives numériques</p>
+        </header>
+
+        <div class="warning">
+            POINTS AVEUGLES DU DOCUMENT<br>
+            Silicon Valley et conquête spatiale · Grands fonds d'investissement (Y Combinator, Sinovation Venture) · Pas de développement sur l'IA
+        </div>
+
+
+        <div class="term">
+            <div class="term-title">Autoroute de l'information</div>
+            <div class="term-content">
+                Terme popularisé dans les années 1990 par l'américain Al Gore, pour désigner les systèmes de communication numériques et le réseau Internet, dont la politique commence à s'emparer.<br><br>
+                <a href="https://vecam.org/2002-2014/article310.html" target="_blank">Discours d'Al Gore traduit en français (page web)</a>
+                <a href="https://www.lesechos.fr/1995/02/autoroutes-de-linformation-le-g7-pose-les-premiers-jalons-dune-organisation-851578" target="_blank">Article de presse de 1995 (Les Échos) sur le discours (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">BATX</div>
+            <div class="term-content">
+                Sigle forgé sur le modèle de GAFA. Il juxtapose les initiales de quatre entreprises chinoises considérées comme des « géants du net », à l'instar de leurs équivalents états-uniens. Les années 2000 ont vu les entreprises étatsuniennes de l'information et notamment de l'internet passer sur le devant de la scène économique. Les BATX ont émergé dans leur sillage au cours de la décennie suivante, à partir de 2010. Ils répondent au départ des GAFAM de la Chine (Géoconfluences).<br><br>
+                <a href="https://geoconfluences.ens-lyon.fr/glossaire/batx" target="_blank"> Entrée « BATX » du glossaire de Géoconfluences (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Beatniks</div>
+            <div class="term-content">
+                Le mouvement beatnik émerge dans les années 1950 aux États-Unis. Il se revendique comme contre-culture opposée aux valeurs traditionnelles de la société. Les beatniks prônent liberté individuelle, créativité expérimentation artistique (poésie, art). Le mouvement, dont le nom est la contraction de « Beat Generation » et « Sputnik », est dénigré et moqué par l'élite.<br><br>
+                <a href="https://www.beatdom.com/beatnik/" target="_blank"> Article amateur (fandom Beatdom)sur les Beatniks</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Bouclier doré / Great Firewall</div>
+            <div class="term-content">
+						Le bouclier doré est un projet de surveillance et de censure d'Internet géré par le ministère de la Sécurité publique de la république populaire de Chine. Le projet débute en 1998 et commence ses activités en novembre 2003.
+                <a href="https://www.amnesty.be/pays/chine/article/mettre-censure-internet" target="_blank">Article d'Amnesty International sur les méfaits du bouclier doré (page WEB)</a>
+                <a href="https://numerique.banq.qc.ca/patrimoine/details/52327/2160161?docref=xV7YIZNn7qB0exGbt1mOSw" target="_blank">Compte-rendu d'un chercheur indépendant sur le pare-feu chinois (PDF)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Cambridge Analytica</div>
+            <div class="term-content">
+                Société britannique de data‑science qui a exploité illégalement les données Facebook de millions d'utilisateurs pour cibler des publicités politiques lors de la campagne présidentielle américaine de 2016.<br><br>
+                <a href="https://www.lemonde.fr/pixels/article/2018/03/22/ce-qu-il-faut-savoir-sur-cambridge-analytica-la-societe-au-c-ur-du-scandale-facebook_5274804_4408996.html" target="_blank">Article de presse (Le Monde) qui résume le scandale Cambridge Analytica</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Collaboration des géants TIC avec la Chine</div>
+            <div class="term-content">
+                Pour continuer d'opérer en Chine dans les années 2000, les géants américains censurent et coopèrent avec le gouvernement. En 2004, Yahoo! délivre à la demande des autorités chinoises les données issues de la boîte mail appartenant à un journaliste. En 2005, Microsoft censure un autre journaliste au niveau mondial. Entre 2006 et 2009, les sites subversifs sont supprimés des recherches Google. Les géants se défendent en mettant en avant l'importance d'un accès à un Internet pour le peuple chinois, malgré les quelques bavures. En 2010, Google cesse sa censure : ses services finissent par être bloqués. Au début des années 2010, la Silicon Valley a quitté la Chine. Directeur de Google China jusqu'en 2009, Kai Fu Lee dénonce la suffisance des géants occidentaux, qui n'ont, selon lui, pas su adapter leurs produits aux particularités du marché chinois : « When eBay entered the Chinese market in 2002, they did so by buying the leading Chinese online auction site—not Alibaba but an eBay impersonator called EachNet. The marriage created the ultimate power couple: the top global e-commerce site and China’s number one knockoff.eBay proceeded to strip away the Chinese company’s user interface,rebuilding the site in eBay’s global product image. Company leadership brought in international managers for the new China operations, who directed all traffic through eBay’s servers back in the United States. But the new user interface didn’t match Chinese web-surfing habits, the new leadership didn’t understand Chinese domestic markets, and the trans-Pacific routing of traffic slowed page-loading times. At one point an earthquake under the Pacific Ocean severed key cables and knocked the site offline for a few days. »	<br><br>
+                <a href="https://www.zdnet.fr/actualites/droits-de-l-homme-yahoo-doit-a-nouveau-s-expliquer-sur-sa-cooperation-avec-les-autorites-chinoises-39371964.htm" target="_blank">Article de presse (ZDNet)sur la collaboration de Yahoo! en faveur des intérêts de Pékin (page web)</a>
+                <a href="https://dn721509.ca.archive.org/0/items/s-a-stairs-styles-catalogue-v-2-dec-2024/AI-Superpowers-China-Silicon-Valley-and-the-New-World-Order-Kai-Fu-Lee.pdf" target="_blank"> Texte entier de l'ouvrage de Kai Fu Lee (PDF) </a>
+            </div>     </div>
+
+        <div class="term">
+            <div class="term-title">Cookies</div>
+            <div class="term-content">
+                Petits fichiers texte stockés par le navigateur sur l'appareil de l'utilisateur, permettant aux sites web de mémoriser des préférences, des sessions ou de suivre le comportement de navigation. Les cookies sont crées par Netscape (entreprise de serveurs web) en 1994. Ils peuvent être « internes » ou « tiers » Les cookies tiers ont la particularité de transmettre des données non à l'opérateur du site web, mais à un tiers (qui créée un profil utilisateur). L'Internet Engineering Task Force (IETF) met rapidement en garde sur les violations potentielles de la vie privée engendrées par l'utilisation de cookies tiers (ignorée).<br><br>
+                <a href="https://linc.cnil.fr/une-petite-histoire-du-cookie" target="_blank">Article de la CNIL sur l'histoire du cookie (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Cyberespace</div>
+            <div class="term-content">
+                Le terme « cyberespace » a été popularisé par un écrivain de science-fiction états-unien, William Gibson, dans son roman Neuromancien, publié en 1984. Le cyberespace est à la fois le réseau international créé par l'interconnexion et l'intégration des systèmes d'information et de télécommunication et l'espace numérique de communication mondial constitué par ce réseau (Géoconfluences).<br><br>
+                <a href="https://geoconfluences.ens-lyon.fr/glossaire/cyberespace" target="_blank"> Entrée « cyberespace » du glossaire de Géoconfluences (page web) </a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Cyberespace et rêve américain</div>
+            <div class="term-content">
+                Idée selon laquelle l'internet offre de nouvelles opportunités économiques et sociales, rappelant le mythe du « rêve américain » de mobilité et de réussite. Cette idée de cyberespace américain est par exemple exploitée par les rédacteurs de la tribune « Cyberespace et rêve américain : une Magna Carta pour l'ère de la connaissance »<br><br>
+                <a href="https://shs.cairn.info/revue-cahiers-philosophiques1-2015-2-page-111?lang=fr" target="_blank"> Traduction française (Cairn) du texte de la Magna Carta (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Cybermachine à sens</div>
+            <div class="term-content">
+                La cybermachine à sens met le corps sous perfusion de stimuli : lumières, stroboscopes, sons, sensations. L'utilisateur est enfermé dans une nouvelle dimension.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Cybernétique</div>
+            <div class="term-content">
+                Discipline née dans les années 1940 qui étudie les systèmes de contrôle et de communication chez les êtres vivants et les machines, fondée par Norbert Wiener. La cybernétique est interdisciplinaire : biologie, robotique, informatique, etc. Les travaux du Rad Lab (Radiation Laboratory du MIT) et les conférences organisées par le Macy (MIT Artificial Intelligence Laboratory) ont influencé la pensée cybernétique.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Cyberpunk</div>
+            <div class="term-content">
+                Le cyberpunk a renouvelé et marqué la littérature de science-fiction des années 1980 avec un agencement de motifs empreints d'exubérance technologique (notamment tout ce qui touche au « cyber »), sur fond de néo-féodalisme économique et de décrépitude sociale (l'aspect « punk »). Si le critère pour définir une dystopie est la dégradation des conditions d'existence pour la grande majorité d'une population, les représentations du cyberpunk semblent largement y répondre. Une des forces apparentes de ce courant est d'avoir remis les évolutions et avancées technologiques dans des dynamiques socio-économiques de fond, celles d'un technocapitalisme en devenir, et d'en donner aussi à voir les contreparties potentielles sous la forme de pathologies sociales (Y. Rumpala)
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">"Data is the new oil"</div>
+            <div class="term-content">
+                La donnée (data) est une richesse stratégique, collectée, revendue et employée par différents acteurs dans une logique de marché.<br><br>
+                <a href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2020/646117/EPRS_BRI(2020)646117_EN.pdf" target="_blank"> Rapport (court)du Parlement européen sur le parallèle entre or noir et data (PDF)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Déclaration d'indépendance du cyberespace</div>
+            <div class="term-content">
+                Texte rédigé en 1996 par John Perry Barlow, à Davos, affirmant que le cyberespace échappe à la juridiction des gouvernements nationaux.<br><br>
+                <a href="https://librecours.eu/IMG/pdf/0e_spe_06_doc_independance_du_cyberespace_2021-01.pdf" target="_blank">Déclaration de Barlow traduite en français (PDF)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Da Cankao/DCK</div>
+            <div class="term-content">
+                Bulletin électronique publié aux États-Unis et envoyé en masse, par internet, vers la Chine. Le nom « Da Cankao » fait référence au quotidien du régime, « Cankao Xiaoxi ». Da Cankao collectait des articles censurés en Chine, les traduisait puis les envoyait à des milliers de destinataires chinois aléatoires. La newsletter de DCK était donc diffusée largement et donnait, en raison de sa diffusion aléatoire, la possibilité aux citoyens de nier leur implication dans l'affaire.<br><br>
+                <a href="https://www.zdnet.fr/actualites/richard-long-un-chinois-sous-surveillance-2101344.htm" target="_blank">Article de presse (ZDNet)au sujet des pressions de Pékin sur un adjudant potentiel de DCK(page web)</a>
+                <a href="https://dacankao.org/" target="_blank">Archive des bulletins DCK (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">"Don't be evil"</div>
+            <div class="term-content">
+                Devise du code de conduite de Google (et plus tard de ses filiales) qui résumait l'engagement éthique de l'entreprise envers les utilisateurs et la société. Il est en remplacé en 2018 par « Do the right thing ».<br><br>
+                <a href="https://www.zdnet.fr/actualites/don-t-be-evil-ou-le-droit-a-l-oubli-de-google-39868486.htm" target="_blank">Article de presse (ZDNet) portant sur la suppression par Google du slogan (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Electronic Frontier Foundation (EFF)</div>
+            <div class="term-content">
+                Fondée en 1990, l'EFF est une organisation à but non lucratif qui défend les libertés civiles dans le monde numérique. Sa mission principale consiste à protéger la liberté d'expression, la vie privée et l'innovation sur Internet : plaidoyers juridiques, travail politique (influence législations et régulations), vulgarisation et éducation.<br><br>
+                <a href="https://www.eff.org/" target="_blank">Site de l'EFF (page web)</a>
+                <a href="https://ssd.eff.org/" target="_blank">Section du site de l'EFF consacrée à l'autodéfense en ligne (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">FreeNet, FreeGate, Ultrasurf</div>
+            <div class="term-content">
+                Des membres du Falun Gong, un mouvement (sectaire ?) de Qigong hostile au gouvernement de Deng Xiaoping, développent depuis l'étranger FreeGate et Ultrasurf, des logiciels de contournement de la censure (IP masquée, traffic chiffré, proxy/VPN). FreeNet est un outil similaire.<br><br>
+                <a href="https://archive-yaleglobal.yale.edu/content/chinese-censors-internet-face-hacktivists-us" target="_blank">Archive de l'université de Yale, au sujet des hacktivistes (page web)</a>
+                <a href="https://staging.freenetproject.org/zh-cn/pages/about.html" target="_blank">Site de FreeNet et philosophie du projet (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Falun Gong</div>
+            <div class="term-content">
+                Mouvement chinois dont les membres pratiquent le Qigong (exercices physiques lents), réprimé par le régime depuis 1999 : programme de propagande à grande échelle, conversion idéologique, rééducation forcée. Le mouvement est connu aux États Unis sous les ramifications « The Mountain », « Dragon Springs » et « Epoch Times ». En France, il propose notamment des spectacles avec « Shen Yun ». Falun Gong est accusé par certains de dérives sectaires ; ABC News diffuse en ce sens plusieurs témoignages en 2020.<br><br>
+                <a href="https://www.abc.net.au/news/2020-07-21/inside-falun-gong-master-li-hongzhi-the-mountain-dragon-springs/12442518" target="_blank">Article de presse (ABC News) rassemblant des témoignages contre Falun Gong (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">FANG</div>
+            <div class="term-content">
+                Acronyme désignant les actions boursières de Facebook (Meta), Amazon, Netflix et Google (Alphabet), regroupées pour leur forte croissance technologique.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">GNU</div>
+            <div class="term-content">
+                Projet lancé en 1983 par Richard Stallman pour créer un système d'exploitation entièrement libre, donnant naissance à la licence GPL et à la communauté du logiciel libre.<br><br>
+                <a href="https://www.gnu.org/home.fr.html" target="_blank">Site de GNU (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Hackers Conference (1984)</div>
+            <div class="term-content">
+                Conférence organisée, entre autres, par Stewart Brand. Les « hackers » y sont différenciés des « crackers » (activités illégales avec une intention malveillante). Pendant cette conférence, Brand clame « Information wants to be free » (entre autres). La conférence existe encore en 2026.<br><br>
+                <a href="https://www.hackersconference.org/faq.html" target="_blank"> Foire aux questions sur le site officiel de la Hackers Conference (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">IBM</div>
+            <div class="term-content">
+                International Business Machines, pionnier de l'informatique depuis les années 1950, connu pour ses mainframes, serveurs et contributions aux standards ouverts.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Intelligence artificielle</div>
+            <div class="term-content">
+                Pour le Parlement européen, l'intelligence artificielle représente tout outil utilisé par une machine afin de « reproduire des comportements liés aux humains, tels que le raisonnement, la planification et la créativité ». Cette définition pourrait être élargie en incluant les comportements dépassant les capacités humaines, puisque les ordinateurs actuels parviennent aujourd'hui à les surpasser dans certaines tâches (bien que la compétence de l'ordinateur s'arrête généralement à l'exécution de cette tâche). À titre d'exemple, le système d'IA AlphaGo, capable de battre le champion du jeu de go Lee Sedol, est très doué pour élaborer des stratégies à ce jeu, mais ses capacités s'arrêtent ici. Il sera incapable de jouer aux échecs ou d'effectuer d'autres tâches tant que celles-ci ne lui auront pas été inculquées (CNIL)<br><br>
+                <a href="https://www.cnil.fr/fr/intelligence-artificielle/intelligence-artificielle-de-quoi-parle-t-on" target="_blank">Article de vulgarisation (CNIL) consacré à l'IA (page web)</a>
+                <a href="https://www.ibm.com/fr-fr/think/topics/history-of-artificial-intelligence" target="_blank">Article de vulgarisation (IBM) consacré à l'IA (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">iPhone</div>
+            <div class="term-content">
+                Premier smartphone d'Apple, lancé en juin 2007. L'Iphone est à la fois un téléphone, un IPod (baladeur mp3), et un ordinateur personnel.<br><br>
+                <a href="https://youtu.be/MnrJzXM7a6o?si=7lJSOOTqbl6NSFBD" target="_blank">Vidéo de la conférence de présentation de l'iPhone par Steve Jobs (vidéo YouTube)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Javascript</div>
+            <div class="term-content">
+                Langage de programmation de scripts qui permet de créer des pages web interactives. Javascript mesure la data comportementale en temps réel.<br><br>
+                <a href="https://fr.themedialeader.com/etude-dattention-ou-defficacite-exigez-du-javascript-sinon-les-resultats/?__cf_chl_tk=sO98RdgHaAeab0648CJ7h9i8hkEsj9PpRlwQsGDblSY-1770289516-1.0.1.1-Rlfyx5N19CUcMGGh7xShmuY9wXBS9xvJVaRtAypWAIo" target="_blank">Tribune (medialeader) de P. Ripart (Prisma Media) à destination des publicitaires (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Labo-censure</div>
+            <div class="term-content">
+                La répression des peuples Ouïghours en 2009 et la pandémie de 2020 sont deux grandes occasions pour le gouvernement chinois de tester et développer des technologies de surveillance de masse.<br><br>
+                <a href="https://strathprints.strath.ac.uk/71586/1/Daly_GISW2019_Algorithmic_oppression_Chinese_characteristics_AI_against_Xinjiang_Uyghurs.pdf" target="_blank">Documentation associative (APC, SIDA) sur la reconnaissance faciale au Xinjiang (PDF)</a>
+                <a href="https://www.humanite.fr/monde/chine/en-chine-comment-sest-propagee-la-maladie-du-controle-social-772890" target="_blank"> Article de pressse (l'Humanité) sur le lien entre COVID-19 et surveillance généralisée en Chine</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Macintosh</div>
+            <div class="term-content">
+                Ordinateur personnel d'Apple introduit en janvier 1984. Son interface graphique claire, fermée et son système d'icônes font de cet ordinateur personnel, qui emploie pourtant des technologies déjà existantes, un outil inédit pour l'utilisateur. Sa publicité, réalisée par Ridley Scott, est particulièrement marquante.<br><br>
+                <a href="https://www.universalis.fr/encyclopedie/apple/2-la-revolution-macintosh/" target="_blank">Article de vulgarisation (Universalis) sur la révolution Macintosh (page web)</a>
+                <a href="https://youtu.be/2zfqw8nhUwA?si=nZksaBkZneZiQCY4" target="_blank">Publicité Apple Macintosh 1984 (vidéo YouTube)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Machine learning</div>
+            <div class="term-content">
+                Le machine learning est une branche de l'IA axée sur les algorithmes capables « d'apprendre » les schémas de données d'entraînement pour faire des inférences précises sur de nouvelles données. Cette capacité de reconnaissance des formes permet aux modèles de machine learning de de prédire ou décider sans instructions explicites (IBM)<br><br>
+                <a href="https://www.ibm.com/fr-fr/think/topics/machine-learning#7281535" target="_blank">Article de vulgarisation (IBM) consacré au machine learning (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Mother of All Demos</div>
+            <div class="term-content">
+                Présentation de 1968 par Douglas Engelbart au Fall Joint Computer Conference, où il a fait la présentation d'éléments fondamentaux de l'ordinateur personnel (fenêtres, hypertexte, souris, etc).
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Microsoft</div>
+            <div class="term-content">
+                Entreprise américaine fondée en 1975, leader du système d'exploitation Windows, de la suite Office et d'une large gamme de services cloud.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">New IP</div>
+            <div class="term-content">
+                Projet de protocole réseau initié par la Huawei (Chine), comme alternative au protocole TCP-IP. Le projet prône une souveraineté numérique dans laquelle la régulation d'internet passe par les États : au lieu d'un Web mondial unifié, les citoyens pourraient en être réduits à se connecter à une mosaïque de réseaux nationaux, chacun régi par ses propres règles – concept connu en Chine sous le nom de "souveraineté numérique (Courrier International). Plusieurs pays se disent déjà intéressés.<br><br>
+                <a href="https://www.zdnet.fr/actualites/le-ripe-s-oppose-au-plan-chinois-de-mise-a-niveau-des-protocoles-internet-39902731.htm" target="_blank">Article de presse (ZDnet) sur l'opposition du RIPE (Europe) au projet de NewIP (page web)</a>
+                <a href="https://www.internetsociety.org/resources/doc/2022/huaweis-new-ip-proposal-faq/" target="_blank">Foire aux questions de Huawei sur le projet de New IP (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">PayPal</div>
+            <div class="term-content">
+                Service de paiement en ligne créé en 1998, avec la fusion de Confinity (P. Thiel) et X.com (E. Musk) Paypal permet le transfert d'argent entre comptes bancaires, cartes de crédit et portefeuilles électroniques. L'ascension de Paypal est liée à celle du commerce électronique. Le partenariat avec e-Bay en 2002 joue un rôle important dans cette ascension.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Publicité</div>
+            <div class="term-content">
+                Une mine d'information sur les utilisateurs naît avec les cookies tiers de Netscape. La donnée, ou data, collectée devient un moyen pour les annonceurs d'affiner leur marketing (combien de clics, sur quel zone de l'écran, en combien de temps, etc). Avec l'éclatement de la bulle Internet en mars 2000, Eric Schmidt (ancien président de Google) décide de passer à la publicité ciblée, plus rémunératrice, pour sauver l'entreprise. Cette mesure d'urgence devient finalement permanente, au point de devenir le modèle économique de Google sur le temps long.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Revue Macworld</div>
+            <div class="term-content">
+                Publication spécialisée dans l'écosystème Apple, couvrant les nouveautés matérielles, logicielles et les tendances du marché. La revue Macworld porte la vision d'un internet vu comme une encyclopédie, et ce dès son lancement en 1984.<br><br>
+                <a href="https://www.macworld.com/" target="_blank">Site de la revue Macworld (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Rad Lab et Conférences Macy</div>
+            <div class="term-content">
+                Laboratoire de recherche du MIT (Radiation Laboratory) et conférences organisées par le Macy (MIT AI Lab) qui ont joué un rôle clé dans le développement de la cybernétique.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">TCP-IP</div>
+            <div class="term-content">
+                Le modèle TCP-IP est créé en en 1973, pour remplacer l'OSI. Il comporte 4 couches : application, transport, internet et accès réseau.<br><br>
+                <a href="https://fr.scribd.com/document/305691570/The-Political-Nature-of-TCP-IP" target="_blank">Travail universitaire sur la portée politique du protocle TCP-IP (PDF)</a>
+                <a href="https://www.mathemagiques.fr/documentsNSI-Tle/reseaux/TCPIP.pdf" target="_blank">Cours de spécialité NSI détaillant le fonctionnement du protocole TCP-IP (PDF)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Telecommunication Act (1996)</div>
+            <div class="term-content">
+                Loi américaine qui dérégule les télécommunications, favorise la concurrence et ouvre le marché aux fournisseurs de services Internet.<br><br>
+                <a href="https://transition.fcc.gov/Reports/tcom1996.txt" target="_blank">Texte original du Telecom Act (ASCII)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Tech Model Rail Road Club</div>
+            <div class="term-content">
+                Club de modélisme ferroviaire du MIT, créé en 1946. Il rassemblait ferrovipathes et ingénieurs. Ce sont les travaux de ces derniers qui sont devenus une référence pour les futurs hackers.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Whole Earth Catalog</div>
+            <div class="term-content">
+                Publication de 1968 à 1972, éditée par Stewart Brand, qui répertoriait outils et ressources pour l'autonomie individuelle, inspirant la culture hacker.<br><br>
+                <a href="https://wholeearth.info/" target="_blank">Site du Whole Earth Catalog, qui en comporte les archives (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">World Wide Web</div>
+            <div class="term-content">
+                Système hypertexte inventé par Tim Berners‑Lee en 1989 au CERN, permettant la navigation interconnectée de documents via des URL et le protocole HTTP.
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Routes digitales de la soie</div>
+            <div class="term-content">
+                Les nouvelles routes de la soie sont une initiative géopolitique chinoise déployée en 2013. Leur versant numérique, les « digital silk roads », incluent le développement d'infrastructures numériques (câbles sous‑marins, satellites) pour connecter l'Asie, l'Afrique et l'Europe.<br><br>
+                <a href="https://youtu.be/tbGNdEsuk_M?si=6cq2JMXZEqZ7yuKh" target="_blank">Vidéo promotionnelle de Huawei (02/2026), sur la transformation d'un monument italien UNESCO transformé en hub technologique (vidéo YouTube)</a>
+                <a href="https://www.tandfonline.com/doi/full/10.1080/01972243.2024.2315875#d1e202" target="_blank">Revue scientifique de la littérature académique portant sur les Digital Silk Roads (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Crédit social</div>
+            <div class="term-content">
+                Système chinois d'évaluation de la réputation et moralités des entreprises et des citoyens basé sur le comportement en ligne et hors ligne. Il convient de rester, pour le moment nuancé, sur la portée orwelienne d'un dispositif qui, outre sa vocation potentiellement liberticide, génère beaucoup de fantasmes en occident.<br><br>
+                <a href="https://hal.science/hal-04792356v1/document" target="_blank">Article universitaire portant sur le système de crédit social et ses origines dans la culture chinoise confucéenne (PDF) </a>
+                <a href="https://theconversation.com/la-surveillance-numerique-est-omnipresente-en-chine-voici-comment-les-citoyens-y-font-face-223051" target="_blank">Article de presse (The Conversation) portant sur la surveillance numérique en Chine (The Conversation)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Surveillance, caméras, IA</div>
+            <div class="term-content">
+                Combinaison de vidéosurveillance massive et d'algorithmes d'intelligence artificielle pour analyser les flux vidéo en temps réel, largement déployée en Chine.<br><br>
+                <a href="https://en.securitychina.com.cn/Home" target="_blank">Site de la Security China Conference 2026 (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">WELL (Whole Earth 'Lectronic Link)</div>
+            <div class="term-content">
+                Communauté virtuelle fondée par Larry Brillant et Stewart Brand (Whole Earth Catalog) en 1985. Ses forums de discussion permettent aux utilisateurs d'échanger sur plusieurs sujets. Des journalistes y sont également invités. J.P Barlow et M. Kapor, deux des trois fondateurs de l'Electronic Frontier Foundation, se rencontrent sur le WELL. En 2026, le forum existe encore et est intégré au Fediverse (alternative au metaverse et aux GAFAM/FANG).<br><br>
+                <a href="https://www.well.com/" target="_blank">Site du WELL (page web)</a>
+            </div>
+        </div>
+
+        <div class="term">
+            <div class="term-title">Zhongguancun</div>
+            <div class="term-content">
+                Premier technopôle à Beijing, dans le district d'Haidan, qualifié de « Silicon Valley chinoise », où se joue une course à la technologie. Le technopôle regroupe 39 universités, 42 laboratoires, 41 écoles d'ingénieurs, 19 000 entreprises et attire 8 milliards de dollars d'investissements étrangers par an.<br><br>
+                <a href="https://french.beijing.gov.cn/latest/news/202405/t20240520_3689291.html" target="_blank">Vitrine officielle du technopôle de Zhongguancun (page web)</a>
+            </div>
+        </div>
+
+        <div class="section-header">💥 RESSOURCES 💥</div>
+
+        <div class="resources">
+            <h2>Ressources et espaces d'actualité</h2>
+            <ul>
+                <li><a href="https://linc.cnil.fr/" target="_blank">LINC CNIL</a></li>
+                <li><a href="https://www.well.com/" target="_blank">The WELL</a></li>
+                <li><a href="https://www.eff.org/" target="_blank">EFF</a></li>
+                <li><a href="https://ssd.eff.org/" target="_blank">Surveillance Self-Defense</a></li>
+                <li><a href="http://mirror.fsf.org/" target="_blank">Distributions Linux (FSF)</a></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            FIN DE L'INDEX
+        </div>
+    </div>
+</body>
+</html>
